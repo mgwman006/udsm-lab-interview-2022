@@ -32,6 +32,12 @@ export function getProcessedData(
 	let activeCount:number=0;
 	let activeSum:number=0;
 
+        /*
+		The lines of code from line 41 to line 60 claculate sum of values and 
+		number of times the reporting for registed member is greater or equal to 50
+		These variables will be used for calculating average.
+	*/
+
 	let regRate1:number=yearOneData[0].reportingRate;
 	if(regRate1 >= 50)
 	{
@@ -54,6 +60,13 @@ export function getProcessedData(
         }
 
 
+	 /*
+                The lines of code from line 70 to line 88 claculate sum of values and
+                number of times the reporting for active members is greater or equal to 50.
+		These variables will be used for calculating average.
+         */
+
+
 	let activeRate1:number=yearOneData[1].reportingRate;
 	if(activeRate1 >= 50)
         {
@@ -74,8 +87,8 @@ export function getProcessedData(
                 activeCount++;
         }
 
-	let avgReg:number=regSum/regCount;
-	let avgActive:number=activeSum/activeCount;
+	let avgReg:number=regSum/regCount;	        //Calculating average for registered members
+	let avgActive:number=activeSum/activeCount;    //Calculating average for active members
 
 	results.push( {
         value: avgReg,
